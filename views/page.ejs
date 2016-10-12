@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebAppMakerApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Page</title>
+    <%- include common/head-link   %>
+    <%- include common/head-script %>
+    <%# remove editor styling %>
+    <style>
+        body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        .jga-close {
+            z-index: 2;
+            position: absolute;
+            right: 15px;
+            background-color: white;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            border-bottom-left-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/api/database/<%= page.name.replace(/ /g,'_') %>" method="post">
+
+    <div class="container">
+
+        <!-- go back to the page editor -->
+        <a href="/#/developer/<%= username %>/website/<%= websiteId %>/page/<%= pageId %>/widget"
+           class="jga-close">
+            <span class="glyphicon glyphicon-remove-circle"></span>
+        </a>
+
+    <% for(var i in page.widgets) {
+        // calculate the name of the template to include
+        // name is based on the type of the widget
+        var widgetType = page.widgets[i].widgetType;
+        widgetType = widgetType.toLowerCase();
+        // actual widget partials are in widget folder
+        var widgetTemplate = "widget/"+widgetType;
+        var widget = page.widgets[i];
+        var context = {
+            widget: page.widgets[i],
+            pageId: pageId,
+            websiteId: websiteId
+        }
+    %>
+<%# pass data to included partial template -%>
+<div>
+<%- include(widgetTemplate, context) -%>
+</div>
+    <% } %>
+
+    </div>
+
+    </form>
+</body>
+</html>

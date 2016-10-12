@@ -1,0 +1,37 @@
+<!-- allow developers to choose the type of statement -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+
+        <a href="#/developer/{{model.username}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/script/edit"
+           class="btn btn-default btn-transparent pull-left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        <a class="navbar-brand">Choose Operation Type</a>
+
+    </div>
+</nav>
+
+<table class="table">
+    <tbody>
+        <!-- number statements allow arithmetic operations -->
+        <tr><td><a ng-click="model.selectStatement('NUMBER')">Number Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('STRING')">String Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('DATE')">Date Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('OBJECT')">Object Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('ARRAY')">Array Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('DATABASE')">Database Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('DECISION')">Decision Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('BOOLEAN')">Boolean Operation</a></td></tr>
+        <tr><td><a ng-click="model.selectStatement('NAVIGATE')">Navigation Operation</a></td></tr>
+    </tbody>
+</table>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="navbar-header">
+        <a href="#/developer/{{currentUser.username}}/edit"
+           class="navbar-toggle collapsed">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+</nav>

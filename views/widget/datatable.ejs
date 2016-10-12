@@ -1,0 +1,27 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <%  for(var i in widget.datatable.fields) {
+            %>      <th>
+                        <%= widget.datatable.fields[i] %>
+                    </th>
+            <%  }
+            %>
+        </tr>
+    </thead>
+    <tbody>
+        <%  var data = data[collectionName];
+            for(var i in data) {
+                var record = data[i];
+                var fields = widget.datatable.fields;
+        %>      <tr>
+        <%      for(var j in fields) {
+        %>          <td>
+                        <%= record[fields[j]] %>
+                    </td>
+        <%      }
+        %>      </tr>
+        <%  }
+        %>
+    </tbody>
+</table>

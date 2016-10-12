@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebAppMakerApp">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
+    <link rel="apple-touch-icon" href="images/wam.png">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <!-- datetimepicker needs bootstrap-datetimepicker-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+    <!-- textAngular needs font awesome fonts and styles -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <!-- load textAngular styles -->
+    <link href="../css/textAngular.css" rel="stylesheet"/>
+    <!-- load autocomplete styles -->
+    <link href="../css/angucomplete-alt.css" rel="stylesheet"/>
+    <link href="../css/bootstrap-combobox.css" rel="stylesheet"/>
+    <script src="../js/jquery-2.2.1.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-combobox.js"></script>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script src="../js/angular-touch.js"></script>
+    <script src="../directives/jga-directives.js"></script>
+    <script src="../directives/wam-directives.js"></script>
+    <script src="../directives/datetime-directives.js"></script>
+
+    <!-- datetimepicker needs bootstrap-datetimepicker-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <!-- load autocomplete directive -->
+    <script src="../js/angucomplete-alt.min.js"></script>
+    <!-- load textAngular libraries -->
+    <script src="../js/textAngular-rangy.min.js"></script>
+    <script src="../js/textAngular-sanitize.min.js"></script>
+    <script src="../js/textAngular.min.js"></script>
+    <script src="views/main/main.controller.js"></script>
+    <script src="views/developer/developer.controller.js"></script>
+    <script src="views/website/website.controller.js"></script>
+    <script src="views/page/page.controller.js"></script>
+    <script src="views/widget/widget.controller.js"></script>
+
+    <!--<script src="views/security/security.controller.js"></script>-->
+    <script src="views/script/script.controller.js"></script>
+    <script src="views/statement/statement.controller.js"></script>
+    <script src="services/developer.service.client.js"></script>
+    <script src="services/website.service.client.js"></script>
+    <script src="services/page.service.client.js"></script>
+    <script src="services/widget.service.client.js"></script>
+    <script src="services/security.service.client.js"></script>
+    <script src="services/database.service.client.js"></script>
+    <script src="services/script.service.client.js"></script>
+    <script src="services/statement.service.client.js"></script>
+    <script src="services/image.gallery.service.client.js"></script>
+    <script src="views/widget/flickr/widget-image-search.controller.client.js"></script>
+    <script src="views/widget/flickr/widget-user-gallery-search.controller.js"></script>
+    <meta charset="UTF-8">
+    <title>wam</title>
+</head>
+<body>
+<div class="container" ng-controller="MainController as main">
+    <div ng-view></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<a href="#/developer"
+   class="pull-left btn btn-danger">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+</a>
+<a ng-click="model.createDeveloper (model.developer)"
+   class="pull-right btn btn-primary">
+    <span class="glyphicon glyphicon-ok"></span>
+</a>
+
+<h2>New Developer</h2>
+
+<div class="form-group">
+    <input ng-model="model.developer.username"
+           class="form-control"
+           placeholder="username"/>
+</div>
+
+<div class="form-group">
+    <input ng-model="model.developer.email"
+           class="form-control"
+           placeholder="email"/>
+</div>
+
+<div class="form-group">
+    <input ng-model="model.developer.firstName"
+           class="form-control"
+           placeholder="First Name"/>
+</div>
+
+<div class="form-group">
+    <input ng-model="model.developer.lastName"
+           class="form-control"
+           placeholder="Last Name"/>
+</div>

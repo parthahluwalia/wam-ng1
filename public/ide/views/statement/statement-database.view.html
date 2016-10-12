@@ -1,0 +1,137 @@
+<div class="form-group">
+    <label for="databaseOperation">Select Database Operation</label>
+    <select name="databaseOperation"
+            ng-options="statement.label for statement in model.databaseOperations track by statement.label"
+            ng-model="model.statement.databaseStatement.databaseOperation" class="form-control" id="databaseOperation">
+    </select>
+
+<span ng-show="model.statement.databaseOperation.label==='Select'">
+    Select from
+</span>
+<span ng-show="model.statement.databaseOperation.label==='Insert'">
+    Insert into
+</span>
+<span ng-show="model.statement.databaseOperation.label==='Update'">
+    Update
+</span>
+<span ng-show="model.statement.databaseOperation.label==='Delete'">
+    Remove from
+</span>
+</div>
+<div class="form-group">
+    <label for="databaseCollection">collection</label>
+    <div class="input-group">
+        <input ng-model="model.statement.databaseStatement.collectionName" type="text" class="form-control" id="databaseCollection">
+        <div class="input-group-btn">
+            <button type="button"
+                    class="btn btn-default dropdown-toggle"
+                    data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right wam-left">
+                <li ng-repeat="collection in model.collections" ng-click="model.statement.databaseStatement.collectionName     = collection.name">
+                    <a>{{collection.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default wam-margin-bottom-5px" ng-show="model.databaseOperation.label==='Update' || model.databaseOperation.label==='Insert'">
+    <div class="panel-heading" data-toggle="collapse" data-target="#set-collapse">
+        <h3 class="panel-title">
+            Set
+        </h3>
+    </div>
+    <div id="set-collapse" class="collapse">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-4 wam-no-padding-right">
+                    <select name="variable"
+                            ng-options="widget.name for widget in model.widgets track by widget.name"
+                            ng-model="model.variable10"
+                            class="form-control">
+                    </select>
+                </div>
+                <div class="col-xs-2 wam-no-padding-left-right text-center wam-font-size-double wam-nugde-6px-up">
+                    =
+                </div>
+                <div class="col-xs-4 wam-no-padding-left">
+                    <select name="variable"
+                            ng-options="statement.label for statement in model.variables track by statement.label"
+                            ng-model="model.variable11"
+                            class="form-control">
+                    </select>
+                </div>
+                <div class="col-xs-2 wam-no-padding-left">
+                    <a class="btn btn-danger btn-block">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4 wam-no-padding-right">
+                    <select name="variable"
+                            ng-options="statement.label for statement in model.variables track by statement.label"
+                            ng-model="model.variable11"
+                            class="form-control">
+                    </select>
+                </div>
+                <div class="col-xs-2 wam-no-padding-left-right text-center wam-font-size-double wam-nugde-6px-up">
+                    =
+                </div>
+                <div class="col-xs-4 wam-no-padding-left">
+                    <select name="variable"
+                            ng-options="statement.label for statement in model.variables track by statement.label"
+                            ng-model="model.variable12"
+                            class="form-control">
+                    </select>
+                </div>
+                <div class="col-xs-2 wam-no-padding-left">
+                    <a class="btn btn-danger btn-block">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4 wam-no-padding-right">
+                    <select name="variable"
+                            ng-options="statement.label for statement in model.variables track by statement.label"
+                            ng-model="model.variable13"
+                            class="form-control">
+                    </select>
+                </div>
+                <div class="col-xs-2 wam-no-padding-left-right text-center wam-font-size-double wam-nugde-6px-up">
+                    =
+                </div>
+                <div class="col-xs-4 wam-no-padding-left">
+                    <select name="variable"
+                            ng-options="statement.label for statement in model.variables track by statement.label"
+                            ng-model="model.variable14"
+                            class="form-control">
+                    </select>
+                </div>
+                <div class="col-xs-2 wam-no-padding-left">
+                    <a class="btn btn-success btn-block">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default wam-margin-bottom-5px" ng-show="model.databaseOperation.label!='Insert'">
+    <div class="panel-heading" data-toggle="collapse" data-target="#where-collapse">
+        <h3 class="panel-title">
+            Where
+        </h3>
+    </div>
+    <div id="where-collapse" class="collapse">
+        <div class="panel-body">
+            <wam-filter filters="model.filters" variables="model.widgets"></wam-filter>
+        </div>
+    </div>
+</div>

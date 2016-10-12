@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+
+        <a href="#/developer/{{model.username}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/script"
+           class="btn btn-default btn-transparent pull-left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        <a class="navbar-brand">New Script</a>
+
+        <a ng-click="model.createScript(model.script)"
+           class="btn btn-default btn-transparent pull-right">
+            <span class="glyphicon glyphicon-ok"></span>
+        </a>
+
+    </div>
+</nav>
+<div class="form-group">
+<lable for="scriptName">Name</lable>
+<input ng-model="model.script.name"
+       class="form-control"
+       placeholder="Script Name" id="scriptName"/>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="navbar-header">
+        <a href="#/developer/{{currentUser.username}}/edit"
+           class="navbar-toggle collapsed">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+</nav>

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default navbar-fixed-top jga">
+    <div class="navbar-header">
+
+        <a href="#/developer/{{model.developerId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget"
+           class="btn btn-default btn-transparent pull-left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        <a class="navbar-brand">Choose Widget</a>
+
+    </div>
+</nav>
+
+<table class="table table-hover">
+    <tbody>
+        <tr><td><a ng-click="model.selectWidget('HEADER')">Header</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('LABEL')">Label</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('HTML')">HTML</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('TEXT')">Text Input</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('LINK')">Link</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('BUTTON')">Button</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('IMAGE')">Image</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('YOUTUBE')">YouTube</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('DATATABLE')">Data Table</a></td></tr>
+        <tr><td><a ng-click="model.selectWidget('REPEATER')">Repeater</a></td></tr>
+    </tbody>
+</table>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="navbar-header">
+        <a href="#/developer/{{model.developerId}}"
+           class="navbar-toggle collapsed">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+</nav>

@@ -1,0 +1,83 @@
+<!-- this page houses all the statement editors
+     we'll show the correct editor based on the
+     type of the statement
+ -->
+<nav class="navbar navbar-default navbar-fixed-top jga">
+    <div class="navbar-header">
+
+        <a href="#/developer/{{model.developerId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/script"
+           class="btn btn-default btn-transparent pull-left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        <a class="navbar-brand">Statement Editor</a>
+
+        <a ng-click="model.saveStatement()"
+           class="btn btn-default btn-transparent pull-right">
+            <span class="glyphicon glyphicon-ok"></span>
+        </a>
+
+    </div>
+</nav>
+
+<div class="form-group">
+<label for="statementName">Name</label>
+<input ng-model="model.statementName" class="form-control" id="statementName"/>
+</div>
+
+<div class="form-group">
+<label for="statementSelect">Select Operation Type</label>
+
+<select name="statementType"
+        ng-options="statement.label for statement in model.statementTypes track by statement.label"
+        ng-model="model.statementType" class="form-control" id="statementSelect">
+    <option ng-value="null">Select Operation</option>
+</select>
+    </div>
+
+<!--Title-->
+<!--<input ng-model="model.statement.title"-->
+       <!--ng-value="model.statement.numberStatement.output + ' = ' + model.statement.numberStatement.input1 + ' '+model.statement.numberStatement.operationType+' ' + model.statement.numberStatement.input2"-->
+       <!--placeholder="Statement Title"-->
+       <!--class="form-control"/>-->
+
+<div ng-switch="model.statementType.label">
+
+    <div ng-switch-when="If">
+        <ng-include src="'views/statement/statement-if.view.html'"></ng-include>
+    </div>
+
+    <div ng-switch-when="Boolean">
+        <ng-include src="'views/statement/statement-boolean.view.html'"></ng-include>
+    </div>
+
+    <div ng-switch-when="Date">
+        <ng-include src="'views/statement/statement-date.view.html'"></ng-include>
+    </div>
+
+    <div ng-switch-when="String">
+        <ng-include src="'views/statement/statement-string.view.html'"></ng-include>
+    </div>
+
+    <div ng-switch-when="Numeric">
+        <ng-include src="'views/statement/statement-numeric.view.html'"></ng-include>
+    </div>
+
+    <div ng-switch-when="Database">
+        <ng-include src="'views/statement/statement-database.view.html'"></ng-include>
+    </div>
+</div>
+
+<button ng-click="model.deleteStatement()" ng-hide="model.statementId == 'new'"
+        class="btn btn-danger btn-block">
+    Delete
+</button>
+
+<nav class="navbar navbar-default navbar-fixed-bottom jga">
+    <div class="navbar-header">
+        <a href="#/developer/{{model.developerId}}"
+           class="navbar-toggle collapsed">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+</nav>

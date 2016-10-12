@@ -1,0 +1,67 @@
+<nav class="navbar navbar-default navbar-fixed-top jga">
+   <div class="navbar-header">
+
+      <a class="navbar-brand">Profile</a>
+
+      <button ng-click="model.updateDeveloper (model.developer)"
+              class="btn btn-default btn-transparent pull-right">
+         <span class="glyphicon glyphicon-ok"></span>
+      </button>
+   </div>
+</nav>
+
+<div ng-if="model.error" class="alert alert-success" role="alert">
+   {{model.error}}
+</div>
+
+<div class="form-group">
+   <label for="devUserName">Username</label>
+   <input ng-model="model.developer.username"
+          id="devUserName" class="form-control"
+          placeholder="username"/>
+</div>
+
+<div class="form-group">
+   <label for="devEmail">Email</label>
+   <input ng-model="model.developer.email"
+          id="devEmail" class="form-control"
+          placeholder="email"/>
+</div>
+
+<div class="form-group">
+   <label for="devFirstName">First Name</label>
+   <input ng-model="model.developer.firstName"
+          id="devFirstName" class="form-control"
+          placeholder="First Name"/>
+</div>
+
+<div class="form-group">
+   <label for="devLastName">Last Name</label>
+   <input ng-model="model.developer.lastName"
+          id="devLastName" class="form-control"
+          placeholder="Last Name"/>
+</div>
+
+<a href="#/developer/{{model.developer._id}}/website"
+        class="btn btn-primary btn-block">
+   Websites
+</a>
+
+<!--<button ng-click="model.deleteDeveloper(model.developer)"-->
+        <!--class="btn btn-danger btn-block">-->
+   <!--Unregister-->
+<!--</button>-->
+
+<button ng-click="main.logout(model.developer)"
+        class="btn btn-danger btn-block">
+   Logout
+</button>
+
+<nav class="navbar navbar-default navbar-fixed-bottom jga">
+   <div class="navbar-header">
+      <a href="#/developer/{{model.developer.username}}/edit"
+              class="navbar-toggle collapsed">
+         <span class="glyphicon glyphicon-user"></span>
+      </a>
+   </div>
+</nav>

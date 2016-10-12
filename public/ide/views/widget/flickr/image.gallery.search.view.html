@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top jga">
+    <div class="navbar-header">
+        <a class="navbar-brand">Search User Images</a>
+
+
+    <a href="#/developer/{{model.developerId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/image/new"
+       class="btn btn-default btn-transparent pull-right">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+</div>
+</nav>
+
+
+<div class="row" class="margin-left: 0px !important;margin-right: 0px !important;">
+    <div ng-repeat="image in model.images" class="col-xs-4" style="padding-right: 1px;padding-left: 0px;padding-bottom: 1px;">
+
+        <div ng-if="image.url" class="wrapper">
+            <div class="fill">
+                <a ng-click="model.selectImage(image)"><span class="cog glyphicon glyphicon-ok"></span></a >
+                <a ng-click="model.deleteImage(image._id)"><span class="plus glyphicon glyphicon-remove"></span></a>
+            <img
+                                      ng-src={{image.url}}
+                                      class="resize_fit_center"
+            />
+    </div>
+        </div>
+</div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom jga">
+    <div class="navbar-header">
+        <a href="#/developer/{{currentUser.username}}/edit"
+           class="navbar-toggle collapsed">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+
+
+        <a href=#/developer/{{model.developerId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/google
+           class="navbar-toggle collapsed">
+            <span class="glyphicon glyphicon-search"></span>
+        </a>
+
+    </div>
+</nav>

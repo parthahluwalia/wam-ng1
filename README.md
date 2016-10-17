@@ -1,4 +1,4 @@
-# wam-ng2
+# wam-ng1
 ## WebAppMaker FrontEnd Component - Angular1
 
 ### Setting Up
